@@ -8,6 +8,17 @@ from os import environ
 miUser = os.environ["MIUSER"]
 miPass = os.environ["MIPASS"]
 
+
+from urllib.request import urlopen
+tortmapjsonURL = os.environ["TORTMAPURL"]
+data = urlopen(tortmapjsonURL).read(20000).decode('utf-8')
+data = data.split("\n")
+data = str(data)
+jsonmap = open("tort2devicemap.json", "a", 1)
+jsonmap.write(data)
+jsonmap.close()
+
+
 file =  "tort2devicemap.json"
 with open(file) as myfile:
     tortMap = (list(myfile)[-1])
