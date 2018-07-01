@@ -21,7 +21,7 @@ jsonmap.close()
 
 file =  "tort2devicemap.json"
 with open(file) as myfile:
-    tortMap = (list(myfile)[-1])
+    tortMap =myfile
 
 tortListNames = json.loads(tortMap)
 tortListNames = tortListNames.keys()
