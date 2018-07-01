@@ -4,9 +4,9 @@ from os import environ
 
 tortmapjsonURL = os.environ["TORTMAPURL"]
 
-import urllib2
+from urllib.request import urlopen
 
-data = urllib2.urlopen(tortmapjsonURL).read(20000)
+data = urlopen(tortmapjsonURL).read(20000)
 data = data.split("\n")
 data = str(data)
 
