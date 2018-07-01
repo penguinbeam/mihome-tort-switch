@@ -29,7 +29,7 @@ class ReusableForm(Form):
 def hello():
     form = ReusableForm(request.form)
  
-    print form.errors
+    print (form.errors)
     if request.method == 'POST':
         switch=request.form['switch']
         state=request.form['state']
